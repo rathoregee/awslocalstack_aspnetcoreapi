@@ -1,0 +1,1 @@
+# awslocalstack_aspnetcoreapi
