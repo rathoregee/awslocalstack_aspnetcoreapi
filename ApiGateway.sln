@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{1F666E60-0E9A-4C82-8546-696B4C4EB55D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiGateway.Tests", "ApiGateway.Tests\ApiGateway.Tests.csproj", "{BF854543-86F5-480E-8998-39CE1AEB14C2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F666E60-0E9A-4C82-8546-696B4C4EB55D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F666E60-0E9A-4C82-8546-696B4C4EB55D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F666E60-0E9A-4C82-8546-696B4C4EB55D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F666E60-0E9A-4C82-8546-696B4C4EB55D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF854543-86F5-480E-8998-39CE1AEB14C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF854543-86F5-480E-8998-39CE1AEB14C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF854543-86F5-480E-8998-39CE1AEB14C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF854543-86F5-480E-8998-39CE1AEB14C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C80B12CF-5B3B-4CFB-B507-3858428EC9DF}
+	EndGlobalSection
+EndGlobal

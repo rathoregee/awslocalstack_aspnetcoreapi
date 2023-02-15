@@ -1,0 +1,53 @@
+version: '3.1'
+
+services:
+  postgres_db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: clientdb
+    ports:
+      - 5432:5432
+    networks:
+      - main
+  localstack:
+    image: localstack/localstack:0.12.17.5
+    restart: always
+    environment: 
+      - AWS_DEFAULT_REGION=ap-southeast-1
+      - EDGE_PORT=4566
+      - SERVICES=sqs
+    ports:
+      - 4566:4566
+    volumes:
+      - "${TMPDIR:-/tmp/localstack}:/tmp/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    networks:
+      - main
+  tests:
+    image: platform-client-core-func-test-runner
+    build:
+      context: .
+      args:
+        IMAGE_DOCKER_DOTNET_SCANNER: "{IMAGE_DOCKER_DOTNET_SCANNER}"
+    environment:
+      SONARORGANISATION: $SONARORGANISATION
+      SONARURL: $SONARURL
+      SONARTOKEN: $SONARTOKEN
+      SONARPROJECTKEY: $SONARPROJECTKEY
+      BUILDBRANCH: $BUILDBRANCH
+      BUILD_NUMBER: $BUILD_NUMBER
+    networks:
+      - main
+    command: "/project/entrypoint.sh"
+    depends_on:
+      - postgres_db
+      - localstack
+volumes:
+  data01:
+    driver: local
+networks:
+  main:
+    driver: bridge
