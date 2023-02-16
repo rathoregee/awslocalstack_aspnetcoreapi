@@ -24,5 +24,10 @@ cdk commands
 
 localstack
 https://docs.localstack.cloud/user-guide/integrations/aws-cdk/
+docker compose up
+aws configure list-profiles
+cdklocal bootstrap --profile localstack -v
+cdklocal deploy --profile localstack
+set AWS_PROFILE=localstack
 
 cdk init sample-app --language csharp
